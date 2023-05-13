@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de Rango de Fechas</title>
+    <!-- Enlace a los archivos CSS de Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Ventanas.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Poppins:wght@200&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Encabezado con el logo de la Universidad de Antioquia -->
+    <header class="bg-success text-white text-center py-1">
+        <div class="container">
+            <img src="logoudea.png" alt="Logo Universidad de Antioquia" class="img-fluid" width="400">
+            <h3 class="mt-6">Ingreso fecha semestre </h3>
+        </div>
+    </header>
+
+    <div>
+        <div class="ventana1"> <!--VENTANA PRINCIPAL-->
+             
+            <h3>Definición de calendario académico</h3>
+            <div class="Organizacion">
+                <div class="contenedor">
+                <p>Seleccione la facultad a asignar calendario académico</p>
+                <fieldset>
+                    <select>
+                        <option value="">Ninguna</option>
+                        <option value="1">Facultad de Ingenieria</option>
+                        <option value="2">Facultad de Medicina</option>
+                        <option value="3">Facultad de Ciencias Exactas y Naturales</option>
+                        <option value="4">Facultad de Derecho y Ciencias Politicas</option>
+                        <option value="5">Facultad de Artes</option>
+                        <option value="6">Facultad de Ciencias Agrarias</option>
+                        <option value="7">Facultad de Contaduría y Administración</option>
+                        <option value="8">Facultad de Ciencias Económicas</option>
+                        <option value="9">Facultad de Ciencias Farmacéuticas y Alimentarias</option>
+                        <option value="10">Facultad de Ciencias Sociales y Humanas</option>
+                        <option value="11">Facultad de Comunicaciones y Filología</option>
+                        <option value="12">Facultad de Educación</option>
+                        <option value="13">Facultad de Enfermería</option>
+                        <option value="14">Facultad de Odontoloía</option>
+                        <option value="15">Facultad de Salud Pública</option>
+                    </select>
+                </fieldset>
+
+                <br>
+                <h3>Fecha de periodo de matricula</h3> <!--FECHAS DE MATRICULA-->
+                <br>
+                <div class="ventanaInterior">
+                    <p>Seleccione la fecha de inicio de la matricula</p>
+                    <input type="date" value="">
+                    <br>
+                    <p>Seleccione la fecha de continuación de la matricula</p>
+                    <input type="date" value="">
+                </div>
+                <br>
+                <h3>Fecha de periodo de ajustes</h3> <!--FECHAS DE AJUSTES-->
+                <br>
+                <div class="ventanaInterior">
+                    <p>Seleccione la fecha para ajustes de matricula</p>
+                    <input type="date" value="">
+                    <br>
+                    <p>Seleccione la fecha de culminación de los ajustes de matricula</p>
+                    <input type="date" value="">
+                </div>
+                </div>
+                <!-- Contenido principal del formulario -->
+                <div class="contenedor">
+                <main class="container mt-4">
+                    <div class="row">
+                        <div class="col-md-3 offset-md-1">
+                            <form id="consulta-form">
+                                <div class="form-group">
+                                    <h3>Fecha de semestre académico</h3> <!--FECHAS DE SEMESTRE-->
+                                    <br>
+                                    <div class="ventanaInterior">
+                                        <form>
+                                            <label for="fechaInicio">Fecha de inicio de semestre:</label>
+                                            <input type="date" id="fechaInicio" name="fechaInicio"><br>
+
+                                            <label for="fechaFinal">Fecha de finalización de semestre:</label>
+                                            <input type="date" id="fechaFinal" name="fechaFinal"><br>
+
+                                            <label for="fechaEvaluacion">Fecha de evaluación del 40%:</label>
+                                            <input type="date" id="fechaEvaluacion" name="fechaEvaluacion"><br>
+
+                                        </form>
+                                    </div>
+                                    <br>
+                                    <h3>Fecha de periodo de cierre</h3> <!--FECHAS DE HABILITACION Y VALIDACION-->
+                                    <br>
+                                    <div class="ventanaInterior">
+                                        <form>
+                                            <label for="fechaExamenes">Fecha de exámenes:</label>
+                                            <input type="date" id="fechaExamenes" name="fechaExamenes"><br>
+
+                                            <label for="fechaHabilitaciones">Fecha de habilitaciones:</label>
+                                            <input type="date" id="fechaHabilitaciones" name="fechaHabilitaciones"><br>
+                                        </form>
+                                    </div>
+                                    <form>
+                                        <br>
+                                        <button class="boton" type="button" id="guardar">Guardar fechas</button>
+                                        <button class="boton" type="button" id="consultar">Consultar fechas</button>
+                                    </form>
+                                    <br>
+
+                                    <div id="fechas">
+                                        <h3>Visualizar fechas de semestre ingresado</h3>
+                                        <br>
+                                        <div class="ventanaInterior">
+                                            <p>Fecha de inicio: <span id="fechaInicio"></span></p>
+                                            <p>Fecha de finalización: <span id="fechaFinal"></span></p>
+                                            <p>Fecha de evaluación del 40%: <span id="fechaEvaluacion"></span></p>
+                                            <p>Fecha de exámenes: <span id="fechaExamenes"></span></p>
+                                            <p>Fecha de habilitaciones: <span id="fechaHabilitaciones"></span></p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <button type="submit" class="btn btn-primary">Consultar</button>
+                            </form>
+                            <br>
+                        </div>
+                    </div>
+                </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <footer class="bg-success text-white text-center py-1">
+        <div class="row">
+            <div class="col-md-3 offset-md-1">
+                <div id="resultado">Proyecto fábrica escuela</div>
+            </div>
+        </div>
+        <br><br>
+    </footer>
+
+    <!-- Enlace a los archivos JS de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
